@@ -1,7 +1,15 @@
 package model;
 
-/**
- * Created by fredr on 14/09/2016.
- */
 public class YachtClub {
+    private String Club;
+
+    public String getClub() {
+        return Club;
+    }
+
+    public void setClub(String string) {Club = string;}
+
+    public String toString () {
+        return "Hi!";
+    }
 }
