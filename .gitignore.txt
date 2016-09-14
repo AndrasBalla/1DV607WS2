@@ -1,2 +1,6 @@
-.idea/*
-out/*
+#Generated files
+out/
+
+#Intellij
+Workshop 2 1DV607.iml
+.idea
