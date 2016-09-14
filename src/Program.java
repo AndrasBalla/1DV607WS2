@@ -1,5 +1,5 @@
-import theYachtClub.controller.Controller;
-import theYachtClub.view.Console;
+import controller.Controller;
+import view.Console;
 
 //import DiceGame_MVC_java.model.DiceGame;
 

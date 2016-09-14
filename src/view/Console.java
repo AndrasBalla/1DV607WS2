@@ -27,11 +27,11 @@ public class Console {
         return menuAlternative;
     }
 
-    public int presentAddUser() {
-        System.out.println("First Name");
-        String firstName = in.nextInt();
-        return menuAlternative;
-    }
+    //public int presentAddUser() {
+    //    System.out.println("First Name");
+    //    String firstName = in.nextInt();
+    //    return menuAlternative;
+    //}
 
     public boolean wantsToQuit() {
         return GetInputChar() == 'q';

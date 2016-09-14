@@ -7,7 +7,7 @@ public class Boat {
     private int m_length;
     private String m_lengthUnit;
 
-    public Boat(String m_boatName, String m_boatType, int m_length, int m_lengthUnit) {
+    public Boat(String m_boatName, String m_boatType, int m_length, String m_lengthUnit) {
         this.m_boatName = m_boatName;
         this.m_boatType = m_boatType;
         this.m_length = m_length;
@@ -30,12 +30,12 @@ public class Boat {
         this.m_length = m_length;
     }
 
-    public int getM_lengthUnit() {
+    public String getM_lengthUnit() {
         return m_lengthUnit;
     }
 
-    public void setM_lengthUnit(int m_lengthUnit) {
-        if (m_lengthUnit.eEquals("m" || "f")) {
+    public void setM_lengthUnit(String m_lengthUnit) {
+        if (m_lengthUnit.equals("m")||m_lengthUnit.equals("f")) {
             this.m_lengthUnit = m_lengthUnit;
         } else {
             this.m_lengthUnit = "undefined";

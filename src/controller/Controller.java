@@ -1,5 +1,5 @@
 package controller;
-import theYachtClub.view.Console;
+import view.Console;
 
 public class Controller {
 
