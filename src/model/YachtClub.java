@@ -8,4 +8,8 @@ public class YachtClub {
     }
 
     public void setClub(String string) {Club = string;}
+
+    public String toString () {
+        return "Hi!";
+    }
 }
