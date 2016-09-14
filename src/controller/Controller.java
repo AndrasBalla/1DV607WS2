@@ -5,8 +5,11 @@ public class Controller {
 
     public void Show(Console a_view) {
 
-        int menuNumber = a_view.presentMainMenu();
+        int menuLineNumber = a_view.presentMainMenu();
 
+        if (menuLineNumber == 1) {
+            a_view.presentAddUser();
+        }
 
 
 
