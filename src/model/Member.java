@@ -57,5 +57,10 @@ public class Member {
     public void setPersonalNumber(int personalNumber) {
         this.personalNumber = personalNumber;
     }
+
+    public void addBoat(Boat boat) {
+        this.boats.add(boat);
+    }
+
 }
 
