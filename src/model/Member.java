@@ -6,17 +6,19 @@ public class Member {
 
     private String m_firstName;
     private String m_lastName;
-    private ArrayList boats;
+    private ArrayList<Boat> boats;
     private int memberID;
     private int personalNumber;
 
     public Member(String m_firstName, String m_lastName, int memberID, int personalNumber) {
         this.m_firstName = m_firstName;
         this.m_lastName = m_lastName;
-        this.boats = new ArrayList();
+        this.boats = new ArrayList<>();
         this.memberID = memberID;
         this.personalNumber = personalNumber;
     }
+
+    public Member(){}
 
     public String getM_firstName() {
         return m_firstName;
@@ -38,7 +40,7 @@ public class Member {
         return boats;
     }
 
-    public void setBoats(ArrayList boats) {
+    public void setBoats(ArrayList<Boat> boats) {
         this.boats = boats;
     }
 
