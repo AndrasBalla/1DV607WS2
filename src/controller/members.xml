@@ -1,41 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalog>
+<data count="3">
     <member mMemberID="0">
-        <m_name>Hi</m_name>
+        <m_name>ANd</m_name>
         <boats/>
-        <m_personalNumber>098</m_personalNumber>
+        <m_personalNumber>ads</m_personalNumber>
     </member>
     <member mMemberID="1">
-        <m_name>Andras</m_name>
-        <boats>
-            <boat>
-                <m_boatName>A</m_boatName>
-                <m_boatType>b</m_boatType>
-                <m_length>2</m_length>
-                <m_lengthUnit>m</m_lengthUnit>
-            </boat>
-            <boat>
-                <m_boatName>A</m_boatName>
-                <m_boatType>b</m_boatType>
-                <m_length>2</m_length>
-                <m_lengthUnit>m</m_lengthUnit>
-            </boat>
-        </boats>
-        <m_personalNumber>900923-2354</m_personalNumber>
-    </member>
-    <member mMemberID="1">
-        <m_name>Fredrik</m_name>
+        <m_name>and</m_name>
         <boats/>
-        <m_personalNumber>00987</m_personalNumber>
+        <m_personalNumber>asdf</m_personalNumber>
     </member>
     <member mMemberID="2">
-        <m_name>adsjsad</m_name>
+        <m_name>hjg</m_name>
         <boats/>
-        <m_personalNumber>sadda</m_personalNumber>
+        <m_personalNumber>null</m_personalNumber>
     </member>
-    <member mMemberID="0">
-        <m_name>asdsa</m_name>
-        <boats/>
-        <m_personalNumber>lkj</m_personalNumber>
-    </member>
-</catalog>
+</data>
