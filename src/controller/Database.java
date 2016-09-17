@@ -17,6 +17,10 @@ import javax.xml.bind.Unmarshaller;
 public class Database {
     private static final String FILE_NAME = "src/controller/members.xml";
 
+    /**
+     * Method to load in the content of the database file.
+     * @return Object Data.
+     */
     public Data readXml(){
         try{
             JAXBContext context = JAXBContext.newInstance(Data.class);
@@ -30,6 +34,10 @@ public class Database {
         return null;
     }
 
+    /**
+     * Takes the object data and updates the file accordingly.
+     * @param data
+     */
     public void writeXml(Data data){
         try {
             JAXBContext context = JAXBContext.newInstance(Data.class);

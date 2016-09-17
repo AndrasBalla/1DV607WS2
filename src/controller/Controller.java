@@ -1,5 +1,4 @@
 package controller;
-import model.Boat;
 import model.Data;
 import model.Member;
 import view.Console;
@@ -11,6 +10,9 @@ public class Controller {
     public void Show(Console a_view, Data a_data) {
         while(1==1){
         int menuNumber = a_view.presentMainMenu();
+        Database database = new Database();
+        //Load in Array from the xml file.
+        a_data = database.readXml();
 
         if(menuNumber == 1) {
             String name = a_view.presentAddName();
@@ -21,15 +23,8 @@ public class Controller {
             Member member = new Member(name, uniqueID, personalNumber);
             System.out.println(member.toString());
             a_data.addMember(member);
-            Member testMember = new Member("Andras","", "900923-2354");
-            Boat testBoat = new Boat("A","b",2,"m");
-            Boat testBoatTwo = new Boat("A","b",2,"m");
-            testMember.addBoat(testBoat);
-            testMember.addBoat(testBoatTwo);
-            a_data.addMember(testMember);
-            Database test = new Database();
-            test.writeXml(a_data);
-            test.readXml();
+            //Save changes to XML file.
+            database.writeXml(a_data);
 
         }
 
