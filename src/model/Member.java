@@ -2,25 +2,32 @@ package model;
 
 import java.util.ArrayList;
 
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement(name = "member")
+@XmlType(propOrder = {"m_name", "m_boats", "m_memberID", "m_personalNumber"})
 public class Member {
 
     private String m_name;
     private ArrayList<Boat> m_boats;
     private String m_memberID;
     private String m_personalNumber;
+    private static int id = 0;
 
-    public Member(String name, String memberID, String personalNumber) {
+    public Member(String name,String idIn, String personalNumber) {
         this.m_name = name;
-        this.m_memberID = memberID;
+        this.m_memberID = "" + id++;
         this.m_personalNumber = personalNumber;
-        m_boats = new ArrayList<Boat>();
+        m_boats = new ArrayList<>();
     }
+
+    public Member(){}
 
 
     public String getM_name() {
         return m_name;
     }
-
+    @XmlElement
     public void setM_name(String m_name) {
         this.m_name = m_name;
     }
@@ -28,11 +35,12 @@ public class Member {
     public ArrayList<Boat> getM_boats() {
         return m_boats;
     }
-
+    @XmlElementWrapper(name = "boats")
+    @XmlElement(name = "boat")
     public void setM_boats(ArrayList<Boat> m_boats) {
         this.m_boats = m_boats;
     }
-
+    @XmlAttribute
     public String getM_memberID() {
         return m_memberID;
     }
@@ -44,9 +52,13 @@ public class Member {
     public String getM_personalNumber() {
         return m_personalNumber;
     }
-
+    @XmlElement
     public void setM_personalNumber(String m_personalNumber) {
         this.m_personalNumber = m_personalNumber;
+    }
+
+    public void addBoat(Boat inBoat){
+        m_boats.add(inBoat);
     }
 
     @Override
