@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.xml.bind.annotation.*;
 
@@ -12,11 +13,11 @@ public class Member {
     private ArrayList<Boat> m_boats;
     private String m_memberID;
     private String m_personalNumber;
-    private static int id = 0;
+    private static final AtomicInteger count = new AtomicInteger(0);
 
     public Member(String name,String idIn, String personalNumber) {
         this.m_name = name;
-        this.m_memberID = "" + id++;
+        this.m_memberID = idIn;
         this.m_personalNumber = personalNumber;
         m_boats = new ArrayList<>();
     }

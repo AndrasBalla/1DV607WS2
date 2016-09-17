@@ -15,12 +15,14 @@ public class Controller {
         a_data = database.readXml();
 
         if(menuNumber == 1) {
+            int current = a_data.getCount();
             String name = a_view.presentAddName();
             String personalNumber = a_view.presentAddPersonalNumber();
             System.out.println(name + " " + personalNumber);
             String uniqueID = UUID.randomUUID().toString();
 
-            Member member = new Member(name, uniqueID, personalNumber);
+            Member member = new Member(name, current + "", personalNumber);
+            a_data.setCount(current + 1);
             System.out.println(member.toString());
             a_data.addMember(member);
             //Save changes to XML file.
