@@ -1,4 +1,5 @@
 package controller;
+import model.Boat;
 import model.Data;
 import model.Member;
 import view.Console;
@@ -20,6 +21,15 @@ public class Controller {
             Member member = new Member(name, uniqueID, personalNumber);
             System.out.println(member.toString());
             a_data.addMember(member);
+            Member testMember = new Member("Andras","", "900923-2354");
+            Boat testBoat = new Boat("A","b",2,"m");
+            Boat testBoatTwo = new Boat("A","b",2,"m");
+            testMember.addBoat(testBoat);
+            testMember.addBoat(testBoatTwo);
+            a_data.addMember(testMember);
+            Database test = new Database();
+            test.writeXml(a_data);
+            test.readXml();
 
         }
 
