@@ -23,4 +23,19 @@
         </boats>
         <m_personalNumber>900923-2354</m_personalNumber>
     </member>
+    <member mMemberID="1">
+        <m_name>Fredrik</m_name>
+        <boats/>
+        <m_personalNumber>00987</m_personalNumber>
+    </member>
+    <member mMemberID="2">
+        <m_name>adsjsad</m_name>
+        <boats/>
+        <m_personalNumber>sadda</m_personalNumber>
+    </member>
+    <member mMemberID="0">
+        <m_name>asdsa</m_name>
+        <boats/>
+        <m_personalNumber>lkj</m_personalNumber>
+    </member>
 </catalog>
