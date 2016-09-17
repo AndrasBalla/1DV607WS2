@@ -4,65 +4,54 @@ import java.util.ArrayList;
 
 public class Member {
 
-    private String m_firstName;
-    private String m_lastName;
-    private ArrayList<Boat> boats;
-    private int memberID;
-    private int personalNumber;
+    private String m_name;
+    private ArrayList<Boat> m_boats;
+    private String m_memberID;
+    private String m_personalNumber;
 
-    public Member(String m_firstName, String m_lastName, int memberID, int personalNumber) {
-        this.m_firstName = m_firstName;
-        this.m_lastName = m_lastName;
-        this.boats = new ArrayList<>();
-        this.memberID = memberID;
-        this.personalNumber = personalNumber;
+    public Member(String name, String memberID, String personalNumber) {
+        this.m_name = name;
+        this.m_memberID = memberID;
+        this.m_personalNumber = personalNumber;
+        m_boats = new ArrayList<Boat>();
     }
 
-    public Member(){}
 
-    public String getM_firstName() {
-        return m_firstName;
+    public String getM_name() {
+        return m_name;
     }
 
-    public void setM_firstName(String m_firstName) {
-        this.m_firstName = m_firstName;
+    public void setM_name(String m_name) {
+        this.m_name = m_name;
     }
 
-    public String getM_lastName() {
-        return m_lastName;
+    public ArrayList<Boat> getM_boats() {
+        return m_boats;
     }
 
-    public void setM_lastName(String m_lastName) {
-        this.m_lastName = m_lastName;
+    public void setM_boats(ArrayList<Boat> m_boats) {
+        this.m_boats = m_boats;
     }
 
-    public ArrayList getBoats() {
-        return boats;
+    public String getM_memberID() {
+        return m_memberID;
     }
 
-    public void setBoats(ArrayList<Boat> boats) {
-        this.boats = boats;
+    public void setM_memberID(String m_memberID) {
+        this.m_memberID = m_memberID;
     }
 
-    public int getMemberID() {
-        return memberID;
+    public String getM_personalNumber() {
+        return m_personalNumber;
     }
 
-    public void setMemberID(int memberID) {
-        this.memberID = memberID;
+    public void setM_personalNumber(String m_personalNumber) {
+        this.m_personalNumber = m_personalNumber;
     }
 
-    public int getPersonalNumber() {
-        return personalNumber;
+    @Override
+    public String toString() {
+        return "MemberID: " + this.m_memberID + "\nName: " + this.m_name + "\nPersonalNumber: " + m_personalNumber;
     }
-
-    public void setPersonalNumber(int personalNumber) {
-        this.personalNumber = personalNumber;
-    }
-
-    public void addBoat(Boat boat) {
-        this.boats.add(boat);
-    }
-
 }
 

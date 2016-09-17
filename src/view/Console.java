@@ -19,18 +19,33 @@ public class Console {
         }
     }
 
-    Scanner in = new Scanner(System.in);
+
 
     public int presentMainMenu() {
-        System.out.println("1. add member");
+        Scanner in = new Scanner(System.in);
+        System.out.println("1. Add member");
+        System.out.println("2. Delete member");
+        System.out.println("3. Change member");
+        System.out.println("4. View member");
+        System.out.println("5. Register boat");
+        System.out.println("6. Delete boat");
+        System.out.println("7. Change boat");
         int menuAlternative = in.nextInt();
         return menuAlternative;
     }
 
-    public String presentAddUser() {
-        System.out.println("First Name");
-        String firstName = in.next();
-        return firstName;
+    public String presentAddName() {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter member name:");
+        String name = in.nextLine();
+        return name;
+    }
+
+    public String presentAddPersonalNumber() {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter members personal number/n use the following format YYMMDD-XXXX");
+        String personalNumber = in.next();
+        return personalNumber;
     }
 
     public boolean wantsToQuit() {
