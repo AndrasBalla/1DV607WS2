@@ -1,5 +1,8 @@
 package view;
 
+import model.Member;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Console {
@@ -50,5 +53,26 @@ public class Console {
 
     public boolean wantsToQuit() {
         return GetInputChar() == 'q';
+    }
+
+    public void presentMembers(ArrayList<Member> members) {
+        //members.forEach(System.out::println);
+        System.out.println("Members:");
+        for(int i = 0; i < members.size(); i++){
+            System.out.println(i + 1 + ". " + members.get(i).getM_name() + " " + members.get(i).getM_personalNumber() + " " + members.get(i).getM_memberID());
+        }
+        System.out.println("---------------------------------------------");
+    }
+
+    public int presentDeleteMember() {
+        System.out.println("Choose a user to delete by entering the corresponding number:");
+        Scanner in = new Scanner(System.in);
+        return in.nextInt();
+    }
+
+    public int presentChangeMember() {
+        System.out.println("Choose a member to change by entering the corresponding number:");
+        Scanner in = new Scanner(System.in);
+        return in.nextInt();
     }
 }

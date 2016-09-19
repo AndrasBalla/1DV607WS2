@@ -11,11 +11,11 @@ public class Member {
 
     private String m_name;
     private ArrayList<Boat> m_boats;
-    private String m_memberID;
+    private int m_memberID;
     private String m_personalNumber;
     private static final AtomicInteger count = new AtomicInteger(0);
 
-    public Member(String name,String idIn, String personalNumber) {
+    public Member(String name,int idIn, String personalNumber) {
         this.m_name = name;
         this.m_memberID = idIn;
         this.m_personalNumber = personalNumber;
@@ -42,11 +42,11 @@ public class Member {
         this.m_boats = m_boats;
     }
     @XmlAttribute
-    public String getM_memberID() {
+    public int getM_memberID() {
         return m_memberID;
     }
 
-    public void setM_memberID(String m_memberID) {
+    public void setM_memberID(int m_memberID) {
         this.m_memberID = m_memberID;
     }
 

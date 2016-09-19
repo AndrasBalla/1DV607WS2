@@ -8,7 +8,7 @@ public class Program {
         Controller m = new Controller();
         Console v = new Console();
         Data d = new Data();
-        //PlayGame c = new PlayGame();
+
 
         m.Show(v, d);
 
