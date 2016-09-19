@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<data count="3">
-    <member mMemberID="0">
-        <m_name>ANd</m_name>
-        <boats/>
-        <m_personalNumber>ads</m_personalNumber>
-    </member>
+<data count="6">
     <member mMemberID="1">
-        <m_name>and</m_name>
+        <m_name>Andras</m_name>
         <boats/>
-        <m_personalNumber>asdf</m_personalNumber>
+        <m_personalNumber>123456-1234</m_personalNumber>
     </member>
     <member mMemberID="2">
-        <m_name>hjg</m_name>
+        <m_name>Lasse Kongo</m_name>
         <boats/>
-        <m_personalNumber>null</m_personalNumber>
+        <m_personalNumber>500505-3216</m_personalNumber>
+    </member>
+    <member mMemberID="3">
+        <m_name>Fredrik Olsson</m_name>
+        <boats/>
+        <m_personalNumber>830318-3571</m_personalNumber>
+    </member>
+    <member mMemberID="5">
+        <m_name>fredrik olsson</m_name>
+        <boats/>
+        <m_personalNumber>123457897</m_personalNumber>
     </member>
 </data>

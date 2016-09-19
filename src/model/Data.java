@@ -6,9 +6,6 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- * Created by fredr on 17/09/2016.
- */
 @XmlRootElement(name = "data")
 public class Data {
     private ArrayList<Member> members = new ArrayList<Member>();
@@ -27,8 +24,19 @@ public class Data {
         this.members.add(member);
     }
 
-    public void deleteMember(Member member) {
-        members.remove(member);
+    public void addMember(String name, String personalNumber) {
+        Member member = new Member(name, this.getCount(), personalNumber);
+        this.members.add(member);
+        this.setCount(this.getCount() + 1);
+    }
+
+    public void deleteMember(int memberToDelete) {
+        this.members.remove(memberToDelete);
+    }
+
+    public void changeMember(int memberToChange, String name, String personalNumber) {
+        this.members.get(memberToChange - 1).setM_name(name);
+        this.members.get(memberToChange - 1).setM_personalNumber(personalNumber);
     }
     @XmlAttribute
     public int getCount() {return count;}
