@@ -35,6 +35,20 @@ public class Controller {
             if (menuNumber == 4) {
                 a_view.presentMembers(a_data.getMembers());
             }
+
+            if (menuNumber == 5) {
+                a_view.presentMembersVerbose(a_data.getMembers());
+            }
+            if (menuNumber == 6) {
+                a_view.presentMembers(a_data.getMembers());
+                int memberToAddBoatTo = a_view.presentRegisterBoat();
+                String boatName = a_view.presentAddBoatName();
+                String boatType = a_view.presentAddBoatType();
+                int boatLength = a_view.presentAddBoatLength();
+                String boatLengthUnit = a_view.presentAddBoatLengthUnit();
+                a_data.addBoat(memberToAddBoatTo, boatName, boatLength, boatLengthUnit, boatType);
+                database.writeXml(a_data);
+            }
         }
     }
 }

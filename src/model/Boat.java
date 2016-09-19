@@ -13,6 +13,16 @@ public class Boat {
     private int m_length;
     private String m_lengthUnit;
 
+    @Override
+    public String toString() {
+        return "Boat{" +
+                "m_boatName='" + m_boatName + '\'' +
+                ", m_boatType='" + m_boatType + '\'' +
+                ", m_length=" + m_length +
+                ", m_lengthUnit='" + m_lengthUnit + '\'' +
+                '}';
+    }
+
     public Boat(String m_boatName, String m_boatType, int m_length, String m_lengthUnit) {
         this.m_boatName = m_boatName;
         this.m_boatType = m_boatType;
