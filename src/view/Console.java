@@ -115,10 +115,36 @@ public class Console {
         for (int i = 0; i < members.size(); i++) {
             System.out.println(i + 1 + ". " + members.get(i).getM_name() + " " + members.get(i).getM_personalNumber() + " " + members.get(i).getM_memberID() + "Boats: " + members.get(i).getM_boats().size());
             for (int j = 0; j < members.get(i).getM_boats().size(); j++) {
-                System.out.println(members.get(i).getM_boats().get(j));
+                System.out.println("     " + (j + 1) + ". Name:" + members.get(i).getM_boats().get(j).getM_boatName());
+                System.out.println("        Type:" + members.get(i).getM_boats().get(j).getM_boatType());
+                System.out.println("        Length:" + members.get(i).getM_boats().get(j).getM_length() + " " + members.get(i).getM_boats().get(j).getM_lengthUnit());
             }
         }
         System.out.println("---------------------------------------------");
+    }
 
+    public void presentMemberVerbose(Member members) {
+        System.out.println("Members:");
+
+            System.out.println(members.getM_name() + " " + members.getM_personalNumber() + " " + members.getM_memberID() + "Boats: " + members.getM_boats().size());
+            for (int j = 0; j < members.getM_boats().size(); j++) {
+                System.out.println("     " + (j + 1) + ". Name:" + members.getM_boats().get(j).getM_boatName());
+                System.out.println("        Type:" + members.getM_boats().get(j).getM_boatType());
+                System.out.println("        Length:" + members.getM_boats().get(j).getM_length() + " " + members.getM_boats().get(j).getM_lengthUnit());
+            }
+
+        System.out.println("---------------------------------------------");
+    }
+
+    public int presentDeleteBoat() {
+        System.out.println("Choose boat to delete by entering the corresponding number:");
+        Scanner in = new Scanner(System.in);
+        return in.nextInt();
+    }
+
+    public int presentMemberToDeleteBoatFrom() {
+        System.out.println("Choose a member to delete boat from by entering the corresponding number:");
+        Scanner in = new Scanner(System.in);
+        return in.nextInt();
     }
 }

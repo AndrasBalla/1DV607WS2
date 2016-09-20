@@ -9,19 +9,13 @@
                 <m_length>2</m_length>
                 <m_lengthUnit>m</m_lengthUnit>
             </boat>
-            <boat>
-                <m_boatName>werw</m_boatName>
-                <m_boatType>sdfs</m_boatType>
-                <m_length>6</m_length>
-                <m_lengthUnit>m</m_lengthUnit>
-            </boat>
         </boats>
         <m_personalNumber>123456-1234</m_personalNumber>
     </member>
     <member mMemberID="2">
-        <m_name>Lasse Kongo</m_name>
+        <m_name>Fredrik Olsson</m_name>
         <boats/>
-        <m_personalNumber>500505-3216</m_personalNumber>
+        <m_personalNumber>456478887</m_personalNumber>
     </member>
     <member mMemberID="5">
         <m_name>fredrik olsson</m_name>
