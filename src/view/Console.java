@@ -22,7 +22,6 @@ public class Console {
         }
     }
 
-
     public int presentMainMenu() {
         Scanner in = new Scanner(System.in);
         System.out.println("1. Add member");
@@ -36,6 +35,8 @@ public class Console {
         int menuAlternative = in.nextInt();
         return menuAlternative;
     }
+
+    //Add member functions
 
     public String presentAddName() {
         Scanner in = new Scanner(System.in);
@@ -51,9 +52,7 @@ public class Console {
         return personalNumber;
     }
 
-    public boolean wantsToQuit() {
-        return GetInputChar() == 'q';
-    }
+    //Show members
 
     public void presentMembers(ArrayList<Member> members) {
         //members.forEach(System.out::println);
@@ -64,11 +63,39 @@ public class Console {
         System.out.println("---------------------------------------------");
     }
 
+    public void presentMembersVerbose(ArrayList<Member> members) {
+        System.out.println("Members:");
+        for (int i = 0; i < members.size(); i++) {
+            System.out.println(i + 1 + ". " + members.get(i).getM_name() + " " + members.get(i).getM_personalNumber() + " " + members.get(i).getM_memberID() + "Boats: " + members.get(i).getM_boats().size());
+            for (int j = 0; j < members.get(i).getM_boats().size(); j++) {
+                System.out.println("     " + (j + 1) + ". Name:" + members.get(i).getM_boats().get(j).getM_boatName());
+                System.out.println("        Type:" + members.get(i).getM_boats().get(j).getM_boatType());
+                System.out.println("        Length:" + members.get(i).getM_boats().get(j).getM_length() + " " + members.get(i).getM_boats().get(j).getM_lengthUnit());
+            }
+        }
+        System.out.println("---------------------------------------------");
+    }
+
+    public void presentMemberVerbose(Member members) {
+        System.out.println("Members:");
+        System.out.println(members.getM_name() + " " + members.getM_personalNumber() + " " + members.getM_memberID() + "Boats: " + members.getM_boats().size());
+        for (int j = 0; j < members.getM_boats().size(); j++) {
+            System.out.println("     " + (j + 1) + ". Name:" + members.getM_boats().get(j).getM_boatName());
+            System.out.println("        Type:" + members.getM_boats().get(j).getM_boatType());
+            System.out.println("        Length:" + members.getM_boats().get(j).getM_length() + " " + members.getM_boats().get(j).getM_lengthUnit());
+        }
+        System.out.println("---------------------------------------------");
+    }
+
+    //Delete member
+
     public int presentDeleteMember() {
         System.out.println("Choose a user to delete by entering the corresponding number:");
         Scanner in = new Scanner(System.in);
         return in.nextInt();
     }
+
+    //Change member
 
     public int presentChangeMember() {
         System.out.println("Choose a member to change by entering the corresponding number:");
@@ -76,11 +103,15 @@ public class Console {
         return in.nextInt();
     }
 
+    //Register boat
+
     public int presentRegisterBoat() {
         System.out.println("Choose a member to register boat for by entering the corresponding number:");
         Scanner in = new Scanner(System.in);
         return in.nextInt();
     }
+
+    //Register and change boat
 
     public String presentAddBoatName() {
         Scanner in = new Scanner(System.in);
@@ -110,31 +141,7 @@ public class Console {
         return unit;
     }
 
-    public void presentMembersVerbose(ArrayList<Member> members) {
-        System.out.println("Members:");
-        for (int i = 0; i < members.size(); i++) {
-            System.out.println(i + 1 + ". " + members.get(i).getM_name() + " " + members.get(i).getM_personalNumber() + " " + members.get(i).getM_memberID() + "Boats: " + members.get(i).getM_boats().size());
-            for (int j = 0; j < members.get(i).getM_boats().size(); j++) {
-                System.out.println("     " + (j + 1) + ". Name:" + members.get(i).getM_boats().get(j).getM_boatName());
-                System.out.println("        Type:" + members.get(i).getM_boats().get(j).getM_boatType());
-                System.out.println("        Length:" + members.get(i).getM_boats().get(j).getM_length() + " " + members.get(i).getM_boats().get(j).getM_lengthUnit());
-            }
-        }
-        System.out.println("---------------------------------------------");
-    }
-
-    public void presentMemberVerbose(Member members) {
-        System.out.println("Members:");
-
-            System.out.println(members.getM_name() + " " + members.getM_personalNumber() + " " + members.getM_memberID() + "Boats: " + members.getM_boats().size());
-            for (int j = 0; j < members.getM_boats().size(); j++) {
-                System.out.println("     " + (j + 1) + ". Name:" + members.getM_boats().get(j).getM_boatName());
-                System.out.println("        Type:" + members.getM_boats().get(j).getM_boatType());
-                System.out.println("        Length:" + members.getM_boats().get(j).getM_length() + " " + members.getM_boats().get(j).getM_lengthUnit());
-            }
-
-        System.out.println("---------------------------------------------");
-    }
+    //Delete boat
 
     public int presentDeleteBoat() {
         System.out.println("Choose boat to delete by entering the corresponding number:");
@@ -147,6 +154,8 @@ public class Console {
         Scanner in = new Scanner(System.in);
         return in.nextInt();
     }
+
+    //Change boat
 
     public int presentChangeBoat() {
         System.out.println("Choose boat to change by entering the corresponding number:");

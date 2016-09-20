@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<data count="6">
+<data count="7">
     <member mMemberID="1">
         <m_name>Andras</m_name>
         <boats>
@@ -28,5 +28,10 @@
             </boat>
         </boats>
         <m_personalNumber>123457897</m_personalNumber>
+    </member>
+    <member mMemberID="6">
+        <m_name>Hadrian Blackwater</m_name>
+        <boats/>
+        <m_personalNumber>19500598</m_personalNumber>
     </member>
 </data>
