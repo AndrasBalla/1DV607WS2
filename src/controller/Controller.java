@@ -57,6 +57,18 @@ public class Controller {
                 a_data.deleteBoat(memberToDeleteBoatFrom, boatToDelete);
                 database.writeXml(a_data);
             }
+            if (menuNumber == 8) {
+                a_view.presentMembers(a_data.getMembers());
+                int memberToChangeBoatOn = a_view.presentMemberToChangeBoatOn();
+                a_view.presentMemberVerbose(a_data.getMembers().get(memberToChangeBoatOn-1));
+                int boatToChange = a_view.presentChangeBoat();
+                String boatName = a_view.presentAddBoatName();
+                String boatType = a_view.presentAddBoatType();
+                int boatLength = a_view.presentAddBoatLength();
+                String boatLengthUnit = a_view.presentAddBoatLengthUnit();
+                a_data.changeBoat(memberToChangeBoatOn, boatToChange, boatName, boatLength, boatLengthUnit, boatType);
+                database.writeXml(a_data);
+            }
         }
     }
 }

@@ -147,4 +147,16 @@ public class Console {
         Scanner in = new Scanner(System.in);
         return in.nextInt();
     }
+
+    public int presentChangeBoat() {
+        System.out.println("Choose boat to change by entering the corresponding number:");
+        Scanner in = new Scanner(System.in);
+        return in.nextInt();
+    }
+
+    public int presentMemberToChangeBoatOn() {
+        System.out.println("Choose a member to change boat on by entering the corresponding number:");
+        Scanner in = new Scanner(System.in);
+        return in.nextInt();
+    }
 }

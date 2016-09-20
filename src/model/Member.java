@@ -70,5 +70,13 @@ public class Member {
     public void deleteBoat(int boatToDelete) {
         m_boats.remove(boatToDelete - 1);
     }
+
+    public void changeBoat(int boatToChange, String boatName, int boatLength, String boatLengthUnit, String boatType) {
+        Boat boat = m_boats.get(boatToChange - 1);
+        boat.setM_boatName(boatName);
+        boat.setM_boatType(boatType);
+        boat.setM_length(boatLength);
+        boat.setM_lengthUnit(boatLengthUnit);
+    }
 }
 
