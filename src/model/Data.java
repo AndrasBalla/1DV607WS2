@@ -53,5 +53,10 @@ public class Data {
         Member member = this.members.get(memberToDeleteBoatFrom - 1);
         member.deleteBoat(boatToDelete);
     }
+
+    public void changeBoat(int memberToChangeBoatOn, int boatToChange, String boatName, int boatLength, String boatLengthUnit, String boatType) {
+        Member member = this.members.get(memberToChangeBoatOn - 1);
+        member.changeBoat(boatToChange, boatName, boatLength, boatLengthUnit, boatType);
+    }
 }
 
