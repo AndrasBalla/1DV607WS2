@@ -66,5 +66,9 @@ public class Member {
     public String toString() {
         return "MemberID: " + this.m_memberID + "\nName: " + this.m_name + "\nPersonalNumber: " + m_personalNumber;
     }
+
+    public void deleteBoat(int boatToDelete) {
+        m_boats.remove(boatToDelete - 1);
+    }
 }
 

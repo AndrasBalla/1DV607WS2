@@ -49,6 +49,14 @@ public class Controller {
                 a_data.addBoat(memberToAddBoatTo, boatName, boatLength, boatLengthUnit, boatType);
                 database.writeXml(a_data);
             }
+            if (menuNumber == 7) {
+                a_view.presentMembers(a_data.getMembers());
+                int memberToDeleteBoatFrom = a_view.presentMemberToDeleteBoatFrom();
+                a_view.presentMemberVerbose(a_data.getMembers().get(memberToDeleteBoatFrom-1));
+                int boatToDelete = a_view.presentDeleteBoat();
+                a_data.deleteBoat(memberToDeleteBoatFrom, boatToDelete);
+                database.writeXml(a_data);
+            }
         }
     }
 }
