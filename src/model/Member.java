@@ -24,10 +24,10 @@ public class Member {
 
     public Member(){}
 
-
     public String getM_name() {
         return m_name;
     }
+
     @XmlElement
     public void setM_name(String m_name) {
         this.m_name = m_name;
@@ -77,6 +77,11 @@ public class Member {
         boat.setM_boatType(boatType);
         boat.setM_length(boatLength);
         boat.setM_lengthUnit(boatLengthUnit);
+    }
+
+    public void addBoat(String boatName, String boatType, int boatLength, String boatLengthUnit) {
+        Boat boat = new Boat(boatName, boatType, boatLength, boatLengthUnit);
+        this.addBoat(boat);
     }
 }
 
