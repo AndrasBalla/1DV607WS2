@@ -45,8 +45,9 @@ public class Data {
 
     public void addBoat(int memberToAddBoatTo, String boatName, int boatLength, String boatLengthUnit, String boatType) {
         Member member = this.members.get(memberToAddBoatTo - 1);
-        Boat boat = new Boat(boatName, boatType, boatLength, boatLengthUnit);
-        member.addBoat(boat);
+        //Boat boat = new Boat(boatName, boatType, boatLength, boatLengthUnit);
+        //member.addBoat(boat);
+        member.addBoat(boatName, boatType, boatLength, boatLengthUnit);
     }
 
     public void deleteBoat(int memberToDeleteBoatFrom, int boatToDelete) {
