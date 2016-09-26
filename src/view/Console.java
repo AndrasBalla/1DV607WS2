@@ -1,5 +1,6 @@
 package view;
 
+import controller.ErrorHandling;
 import model.Member;
 
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.Scanner;
 public class Console {
 
     String[] menuItems = {"add user", "add boat"};
+    ErrorHandling error = new ErrorHandling();
 
     private int GetInputChar() {
         try {
@@ -43,14 +45,26 @@ public class Console {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter member name:");
         String name = in.nextLine();
-        return name;
+        if (error.checkName(name)){
+            return name;
+        }else {
+            System.out.println("Please provide a name.");
+            presentAddName();
+        }
+        return null;
     }
 
     public String presentAddPersonalNumber() {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter members personal number/n use the following format YYMMDD-XXXX");
         String personalNumber = in.next();
-        return personalNumber;
+        if (error.checkPnr(personalNumber)) {
+            return personalNumber;
+        }else {
+            System.out.println("Please enter a valid personal number");
+            presentAddPersonalNumber();
+        }
+        return null;
     }
 
     //Show members
@@ -124,7 +138,13 @@ public class Console {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter boat name:");
         String name = in.nextLine();
-        return name;
+        if (error.checkName(name)){
+            return name;
+        }else {
+            System.out.println("Please provide a name.");
+            presentAddBoatName();
+        }
+        return null;
     }
 
     public String presentAddBoatType() {
