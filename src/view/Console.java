@@ -27,11 +27,12 @@ public class Console {
         System.out.println("1. Add member");
         System.out.println("2. Delete member");
         System.out.println("3. Change member");
-        System.out.println("4. View member compact");
+        System.out.println("4. View members compact");
         System.out.println("5. View members verbose");
-        System.out.println("6. Register boat");
-        System.out.println("7. Delete boat");
-        System.out.println("8. Change boat");
+        System.out.println("6. View member");
+        System.out.println("7. Register boat");
+        System.out.println("8. Delete boat");
+        System.out.println("9. Change boat");
         int menuAlternative = in.nextInt();
         return menuAlternative;
     }
@@ -66,7 +67,7 @@ public class Console {
     public void presentMembersVerbose(ArrayList<Member> members) {
         System.out.println("Members:");
         for (int i = 0; i < members.size(); i++) {
-            System.out.println(i + 1 + ". " + members.get(i).getM_name() + " " + members.get(i).getM_personalNumber() + " " + members.get(i).getM_memberID() + "Boats: " + members.get(i).getM_boats().size());
+            System.out.println(i + 1 + ". " + members.get(i).getM_name() + " " + members.get(i).getM_personalNumber() + " MemberID: " + members.get(i).getM_memberID());
             for (int j = 0; j < members.get(i).getM_boats().size(); j++) {
                 System.out.println("     " + (j + 1) + ". Name:" + members.get(i).getM_boats().get(j).getM_boatName());
                 System.out.println("        Type:" + members.get(i).getM_boats().get(j).getM_boatType());
@@ -76,13 +77,13 @@ public class Console {
         System.out.println("---------------------------------------------");
     }
 
-    public void presentMemberVerbose(Member members) {
-        System.out.println("Members:");
-        System.out.println(members.getM_name() + " " + members.getM_personalNumber() + " " + members.getM_memberID() + "Boats: " + members.getM_boats().size());
-        for (int j = 0; j < members.getM_boats().size(); j++) {
-            System.out.println("     " + (j + 1) + ". Name:" + members.getM_boats().get(j).getM_boatName());
-            System.out.println("        Type:" + members.getM_boats().get(j).getM_boatType());
-            System.out.println("        Length:" + members.getM_boats().get(j).getM_length() + " " + members.getM_boats().get(j).getM_lengthUnit());
+    public void presentMemberVerbose(Member member) {
+        System.out.println("Member:");
+        System.out.println(member.getM_name() + " " + member.getM_personalNumber() + " " + member.getM_memberID() + "Boats: " + member.getM_boats().size());
+        for (int j = 0; j < member.getM_boats().size(); j++) {
+            System.out.println("     " + (j + 1) + ". Name:" + member.getM_boats().get(j).getM_boatName());
+            System.out.println("        Type:" + member.getM_boats().get(j).getM_boatType());
+            System.out.println("        Length:" + member.getM_boats().get(j).getM_length() + " " + member.getM_boats().get(j).getM_lengthUnit());
         }
         System.out.println("---------------------------------------------");
     }
@@ -99,6 +100,12 @@ public class Console {
 
     public int presentChangeMember() {
         System.out.println("Choose a member to change by entering the corresponding number:");
+        Scanner in = new Scanner(System.in);
+        return in.nextInt();
+    }
+
+    public int presentViewMember() {
+        System.out.println("Choose a member to view by entering the corresponding number:");
         Scanner in = new Scanner(System.in);
         return in.nextInt();
     }

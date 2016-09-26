@@ -1,8 +1,6 @@
 package controller;
 
 import model.Data;
-import model.Member;
-
 import java.io.File;
 
 import javax.xml.bind.JAXBContext;
@@ -10,10 +8,6 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-
-/**
- * Created by Spiks on 17/09/2016.
- */
 public class Database {
     private static final String FILE_NAME = "src/controller/members.xml";
 
@@ -45,7 +39,7 @@ public class Database {
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
             // Write to System.out for debugging
-            m.marshal(data, System.out);
+            //m.marshal(data, System.out);
 
             // Write to File
             m.marshal(data, new File(FILE_NAME));

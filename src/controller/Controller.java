@@ -39,7 +39,14 @@ public class Controller {
             if (menuNumber == 5) {
                 a_view.presentMembersVerbose(a_data.getMembers());
             }
+
             if (menuNumber == 6) {
+                a_view.presentMembers(a_data.getMembers());
+                int memberToView = a_view.presentViewMember();
+                a_view.presentMemberVerbose(a_data.getMembers().get(memberToView - 1));
+            }
+
+            if (menuNumber == 7) {
                 a_view.presentMembers(a_data.getMembers());
                 int memberToAddBoatTo = a_view.presentRegisterBoat();
                 String boatName = a_view.presentAddBoatName();
@@ -49,7 +56,7 @@ public class Controller {
                 a_data.addBoat(memberToAddBoatTo, boatName, boatLength, boatLengthUnit, boatType);
                 database.writeXml(a_data);
             }
-            if (menuNumber == 7) {
+            if (menuNumber == 8) {
                 a_view.presentMembers(a_data.getMembers());
                 int memberToDeleteBoatFrom = a_view.presentMemberToDeleteBoatFrom();
                 a_view.presentMemberVerbose(a_data.getMembers().get(memberToDeleteBoatFrom-1));
@@ -57,7 +64,7 @@ public class Controller {
                 a_data.deleteBoat(memberToDeleteBoatFrom, boatToDelete);
                 database.writeXml(a_data);
             }
-            if (menuNumber == 8) {
+            if (menuNumber == 9) {
                 a_view.presentMembers(a_data.getMembers());
                 int memberToChangeBoatOn = a_view.presentMemberToChangeBoatOn();
                 a_view.presentMemberVerbose(a_data.getMembers().get(memberToChangeBoatOn-1));
