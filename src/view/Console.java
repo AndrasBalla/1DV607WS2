@@ -8,8 +8,9 @@ import java.util.Scanner;
 
 public class Console {
 
-    ErrorHandling error = new ErrorHandling();
-    Scanner in = new Scanner(System.in);
+    private ErrorHandling error = new ErrorHandling();
+    private Scanner in = new Scanner(System.in);
+    private int input;
 
 
     public int presentMainMenu() {
@@ -23,11 +24,14 @@ public class Console {
         System.out.println("8. Delete boat");
         System.out.println("9. Change boat");
         String menuAlternative = in.nextLine();
+        if (isInteger(menuAlternative, 9)){
+            return input;
+        }else {
+            System.out.println("Please provide a Integer.");
+            presentMainMenu();
+        }
 
-        //fix error handling
-        int menuAlternativeInt = Integer.parseInt(menuAlternative);
-
-        return menuAlternativeInt;
+        return 0;
     }
 
     //Add member functions
@@ -112,9 +116,14 @@ public class Console {
         System.out.println("Choose a member to change by entering the corresponding number:");
         String memberLine = in.nextLine();
 
-        //Errorhandling
-        int nextInt = Integer.parseInt(memberLine);
-        return members.get(nextInt - 1);
+        if (isInteger(memberLine, members.size())){
+            return members.get(input - 1);
+        }else {
+            System.out.println("Please provide a Integer between 1 and " + members.size() + ".");
+            presentChangeMember(members);
+        }
+
+        return null;
     }
 
     public int presentViewMember() {
@@ -193,5 +202,17 @@ public class Console {
         System.out.println("Choose a member to change boat on by entering the corresponding number:");
         Scanner in = new Scanner(System.in);
         return in.nextInt();
+    }
+
+    private boolean isInteger(String s, int max) {
+        try {
+            input = Integer.parseInt(s);
+        } catch(NumberFormatException e) {
+            return false;
+        } catch(NullPointerException e) {
+            return false;
+        }
+
+        return input > 0 && input <= max;
     }
 }

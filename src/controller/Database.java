@@ -19,7 +19,6 @@ public class Database {
         try{
             JAXBContext context = JAXBContext.newInstance(Data.class);
             Unmarshaller un = context.createUnmarshaller();
-            System.out.println(this.getClass().getResource("/books.xml"));
             Data temp = (Data) un.unmarshal(new File(FILE_NAME));
             return temp;
         } catch(JAXBException e) {
