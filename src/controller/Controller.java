@@ -1,5 +1,6 @@
 package controller;
 
+import model.Boat;
 import model.Data;
 import model.Member;
 import view.Console;
@@ -20,9 +21,8 @@ public class Controller {
                 database.writeXml(a_data);
             }
             if (menuNumber == 2) {
-                a_view.presentMembers(a_data.getMembers());
-                int memberToDelete = a_view.presentDeleteMember();
-                a_data.deleteMember(a_data.getMembers().get(memberToDelete - 1));
+                Member memberToDelete = a_view.presentDeleteMember(a_data.getMembers());
+                a_data.deleteMember(memberToDelete);
                 database.writeXml(a_data);
             }
             if (menuNumber == 3) {
@@ -41,14 +41,12 @@ public class Controller {
             }
 
             if (menuNumber == 6) {
-                a_view.presentMembers(a_data.getMembers());
-                int memberToView = a_view.presentViewMember();
-                a_view.presentMemberVerbose(a_data.getMembers().get(memberToView - 1));
+                Member memberToView = a_view.presentViewMember(a_data.getMembers());
+                a_view.presentMemberVerbose(memberToView);
             }
 
             if (menuNumber == 7) {
-                a_view.presentMembers(a_data.getMembers());
-                int memberToAddBoatTo = a_view.presentRegisterBoat();
+                Member memberToAddBoatTo = a_view.presentRegisterBoat(a_data.getMembers());
                 String boatName = a_view.presentAddBoatName();
                 String boatType = a_view.presentAddBoatType();
                 int boatLength = a_view.presentAddBoatLength();
@@ -57,18 +55,14 @@ public class Controller {
                 database.writeXml(a_data);
             }
             if (menuNumber == 8) {
-                a_view.presentMembers(a_data.getMembers());
-                int memberToDeleteBoatFrom = a_view.presentMemberToDeleteBoatFrom();
-                a_view.presentMemberVerbose(a_data.getMembers().get(memberToDeleteBoatFrom-1));
-                int boatToDelete = a_view.presentDeleteBoat();
+                Member memberToDeleteBoatFrom = a_view.presentMemberToDeleteBoatFrom(a_data.getMembers());
+                Boat boatToDelete = a_view.presentDeleteBoat(memberToDeleteBoatFrom);
                 a_data.deleteBoat(memberToDeleteBoatFrom, boatToDelete);
                 database.writeXml(a_data);
             }
             if (menuNumber == 9) {
-                a_view.presentMembers(a_data.getMembers());
-                int memberToChangeBoatOn = a_view.presentMemberToChangeBoatOn();
-                a_view.presentMemberVerbose(a_data.getMembers().get(memberToChangeBoatOn-1));
-                int boatToChange = a_view.presentChangeBoat();
+                Member memberToChangeBoatOn = a_view.presentMemberToChangeBoatOn(a_data.getMembers());
+                Boat boatToChange = a_view.presentChangeBoat(memberToChangeBoatOn);
                 String boatName = a_view.presentAddBoatName();
                 String boatType = a_view.presentAddBoatType();
                 int boatLength = a_view.presentAddBoatLength();

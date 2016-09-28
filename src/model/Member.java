@@ -65,16 +65,15 @@ public class Member {
         return "MemberID: " + this.m_memberID + "\nName: " + this.m_name + "\nPersonalNumber: " + m_personalNumber;
     }
 
-    public void deleteBoat(int boatToDelete) {
-        m_boats.remove(boatToDelete - 1);
+    public void deleteBoat(Boat boatToDelete) {
+        m_boats.remove(boatToDelete);
     }
 
-    public void changeBoat(int boatToChange, String boatName, int boatLength, String boatLengthUnit, String boatType) {
-        Boat boat = m_boats.get(boatToChange - 1);
-        boat.setM_boatName(boatName);
-        boat.setM_boatType(boatType);
-        boat.setM_length(boatLength);
-        boat.setM_lengthUnit(boatLengthUnit);
+    public void changeBoat(Boat boatToChange, String boatName, int boatLength, String boatLengthUnit, String boatType) {
+        boatToChange.setM_boatName(boatName);
+        boatToChange.setM_boatType(boatType);
+        boatToChange.setM_length(boatLength);
+        boatToChange.setM_lengthUnit(boatLengthUnit);
     }
 
     public void addBoat(String boatName, String boatType, int boatLength, String boatLengthUnit) {
