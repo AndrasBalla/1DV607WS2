@@ -8,7 +8,7 @@ import java.util.Calendar;
 public class ErrorHandling {
 
     public boolean checkName(String name){
-        return !(name.isEmpty());
+        return name.isEmpty();
     }
 
     public boolean checkPnr(String inId) {

@@ -11,12 +11,19 @@ public class Controller {
         while (1 == 1) {
             int menuNumber = a_view.presentMainMenu();
             Database database = new Database();
+            ErrorHandling check = new ErrorHandling();
             //Load in Array from the xml file.
             a_data = database.readXml();
 
             if (menuNumber == 1) {
-                String name = a_view.presentAddName();
-                String personalNumber = a_view.presentAddPersonalNumber();
+                String name = a_view.presentAddName("");
+                while (check.checkName(name)){
+                    name = a_view.presentAddName("Please provide a name.");
+                }
+                String personalNumber = a_view.presentAddPersonalNumber("");
+                while (!(check.checkPnr(personalNumber))){
+                    personalNumber = a_view.presentAddPersonalNumber("Please enter a valid personal number");
+                }
                 a_data.addMember(name, personalNumber);
                 database.writeXml(a_data);
             }
@@ -27,8 +34,14 @@ public class Controller {
             }
             if (menuNumber == 3) {
                 Member memberToChange = a_view.presentChangeMember(a_data.getMembers());
-                String name = a_view.presentAddName();
-                String personalNumber = a_view.presentAddPersonalNumber();
+                String name = a_view.presentAddName("");
+                while (check.checkName(name)){
+                    name = a_view.presentAddName("Please provide a name.");
+                }
+                String personalNumber = a_view.presentAddPersonalNumber("");
+                while (!(check.checkPnr(personalNumber))){
+                    personalNumber = a_view.presentAddPersonalNumber("Please enter a valid personal number");
+                }
                 a_data.changeMember(memberToChange, name, personalNumber);
                 database.writeXml(a_data);
             }
@@ -48,7 +61,13 @@ public class Controller {
             if (menuNumber == 7) {
                 Member memberToAddBoatTo = a_view.presentRegisterBoat(a_data.getMembers());
                 String boatName = a_view.presentAddBoatName();
+                while (check.checkName(boatName)){
+                    boatName = a_view.presentAddName("Please provide a boat name.");
+                }
                 String boatType = a_view.presentAddBoatType();
+                while (check.checkName(boatType)){
+                    boatType = a_view.presentAddName("Please provide a boat type.");
+                }
                 int boatLength = a_view.presentAddBoatLength();
                 String boatLengthUnit = a_view.presentAddBoatLengthUnit();
                 a_data.addBoat(memberToAddBoatTo, boatName, boatLength, boatLengthUnit, boatType);

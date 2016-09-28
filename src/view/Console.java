@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Console {
 
-    private ErrorHandling error = new ErrorHandling();
+    private ErrorHandling check = new ErrorHandling();
     private Scanner in = new Scanner(System.in);
     private int input;
 
@@ -37,31 +37,18 @@ public class Console {
 
     //Add member functions
 
-    public String presentAddName() {
+    public String presentAddName(String errorMsg) {
         //Scanner in = new Scanner(System.in);
+        System.out.println(errorMsg);
         System.out.println("Enter member name:");
-        String name = in.nextLine();
-        System.out.println(name);
-        if (error.checkName(name)){
-            return name;
-        }else {
-            System.out.println("Please provide a name.");
-            presentAddName();
-        }
-        return null;
+        return in.nextLine();
     }
 
-    public String presentAddPersonalNumber() {
+    public String presentAddPersonalNumber(String errorMsg) {
         //Scanner in = new Scanner(System.in);
+        System.out.println(errorMsg);
         System.out.println("Enter members personal number/n use the following format YYMMDD-XXXX");
-        String personalNumber = in.nextLine();
-        if (error.checkPnr(personalNumber)) {
-            return personalNumber;
-        }else {
-            System.out.println("Please enter a valid personal number");
-            presentAddPersonalNumber();
-        }
-        return null;
+        return in.nextLine();
     }
 
     //Show members
@@ -170,7 +157,7 @@ public class Console {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter boat name:");
         String name = in.nextLine();
-        if (error.checkName(name)){
+        if (check.checkName(name)){
             return name;
         }else {
             System.out.println("Please provide a name.");
