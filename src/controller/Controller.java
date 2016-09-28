@@ -1,6 +1,7 @@
 package controller;
 
 import model.Data;
+import model.Member;
 import view.Console;
 
 public class Controller {
@@ -21,12 +22,11 @@ public class Controller {
             if (menuNumber == 2) {
                 a_view.presentMembers(a_data.getMembers());
                 int memberToDelete = a_view.presentDeleteMember();
-                a_data.deleteMember(memberToDelete - 1);
+                a_data.deleteMember(a_data.getMembers().get(memberToDelete - 1));
                 database.writeXml(a_data);
             }
             if (menuNumber == 3) {
-                a_view.presentMembers(a_data.getMembers());
-                int memberToChange = a_view.presentChangeMember();
+                Member memberToChange = a_view.presentChangeMember(a_data.getMembers());
                 String name = a_view.presentAddName();
                 String personalNumber = a_view.presentAddPersonalNumber();
                 a_data.changeMember(memberToChange, name, personalNumber);

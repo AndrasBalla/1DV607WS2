@@ -30,13 +30,13 @@ public class Data {
         this.setCount(this.getCount() + 1);
     }
 
-    public void deleteMember(int memberToDelete) {
+    public void deleteMember(Member memberToDelete) {
         this.members.remove(memberToDelete);
     }
 
-    public void changeMember(int memberToChange, String name, String personalNumber) {
-        this.members.get(memberToChange - 1).setM_name(name);
-        this.members.get(memberToChange - 1).setM_personalNumber(personalNumber);
+    public void changeMember(Member memberToChange, String name, String personalNumber) {
+        memberToChange.setM_name(name);
+        memberToChange.setM_personalNumber(personalNumber);
     }
     @XmlAttribute
     public int getCount() {return count;}
