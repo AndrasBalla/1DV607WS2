@@ -8,24 +8,11 @@ import java.util.Scanner;
 
 public class Console {
 
-    String[] menuItems = {"add user", "add boat"};
     ErrorHandling error = new ErrorHandling();
+    Scanner in = new Scanner(System.in);
 
-    private int GetInputChar() {
-        try {
-            int c = System.in.read();
-            while (c == '\r' || c == '\n') {
-                c = System.in.read();
-            }
-            return c;
-        } catch (java.io.IOException e) {
-            System.out.println("" + e);
-            return 0;
-        }
-    }
 
     public int presentMainMenu() {
-        Scanner in = new Scanner(System.in);
         System.out.println("1. Add member");
         System.out.println("2. Delete member");
         System.out.println("3. Change member");
@@ -35,16 +22,21 @@ public class Console {
         System.out.println("7. Register boat");
         System.out.println("8. Delete boat");
         System.out.println("9. Change boat");
-        int menuAlternative = in.nextInt();
-        return menuAlternative;
+        String menuAlternative = in.nextLine();
+
+        //fix error handling
+        int menuAlternativeInt = Integer.parseInt(menuAlternative);
+
+        return menuAlternativeInt;
     }
 
     //Add member functions
 
     public String presentAddName() {
-        Scanner in = new Scanner(System.in);
+        //Scanner in = new Scanner(System.in);
         System.out.println("Enter member name:");
         String name = in.nextLine();
+        System.out.println(name);
         if (error.checkName(name)){
             return name;
         }else {
@@ -55,9 +47,9 @@ public class Console {
     }
 
     public String presentAddPersonalNumber() {
-        Scanner in = new Scanner(System.in);
+        //Scanner in = new Scanner(System.in);
         System.out.println("Enter members personal number/n use the following format YYMMDD-XXXX");
-        String personalNumber = in.next();
+        String personalNumber = in.nextLine();
         if (error.checkPnr(personalNumber)) {
             return personalNumber;
         }else {
@@ -70,7 +62,6 @@ public class Console {
     //Show members
 
     public void presentMembers(ArrayList<Member> members) {
-        //members.forEach(System.out::println);
         System.out.println("Members:");
         for (int i = 0; i < members.size(); i++) {
             System.out.println(i + 1 + ". " + members.get(i).getM_name() + " " + members.get(i).getM_personalNumber() + " MemberID: " + members.get(i).getM_memberID() + " Boats: " + members.get(i).getM_boats().size());
@@ -106,16 +97,24 @@ public class Console {
 
     public int presentDeleteMember() {
         System.out.println("Choose a user to delete by entering the corresponding number:");
-        Scanner in = new Scanner(System.in);
-        return in.nextInt();
+        String nextLine = in.nextLine();
+
+        //fix error handling
+        int nextInt= Integer.parseInt(nextLine);
+
+        return nextInt;
     }
 
     //Change member
 
-    public int presentChangeMember() {
+    public Member presentChangeMember(ArrayList<Member> members) {
+        presentMembers(members);
         System.out.println("Choose a member to change by entering the corresponding number:");
-        Scanner in = new Scanner(System.in);
-        return in.nextInt();
+        String memberLine = in.nextLine();
+
+        //Errorhandling
+        int nextInt = Integer.parseInt(memberLine);
+        return members.get(nextInt - 1);
     }
 
     public int presentViewMember() {
