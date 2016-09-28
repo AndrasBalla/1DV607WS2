@@ -43,21 +43,16 @@ public class Data {
 
     public void setCount(int count) {this.count = count;}
 
-    public void addBoat(int memberToAddBoatTo, String boatName, int boatLength, String boatLengthUnit, String boatType) {
-        Member member = this.members.get(memberToAddBoatTo - 1);
-        //Boat boat = new Boat(boatName, boatType, boatLength, boatLengthUnit);
-        //member.addBoat(boat);
-        member.addBoat(boatName, boatType, boatLength, boatLengthUnit);
+    public void addBoat(Member memberToAddBoatTo, String boatName, int boatLength, String boatLengthUnit, String boatType) {
+        memberToAddBoatTo.addBoat(boatName, boatType, boatLength, boatLengthUnit);
     }
 
-    public void deleteBoat(int memberToDeleteBoatFrom, int boatToDelete) {
-        Member member = this.members.get(memberToDeleteBoatFrom - 1);
-        member.deleteBoat(boatToDelete);
+    public void deleteBoat(Member memberToDeleteBoatFrom, Boat boatToDelete) {
+        memberToDeleteBoatFrom.deleteBoat(boatToDelete);
     }
 
-    public void changeBoat(int memberToChangeBoatOn, int boatToChange, String boatName, int boatLength, String boatLengthUnit, String boatType) {
-        Member member = this.members.get(memberToChangeBoatOn - 1);
-        member.changeBoat(boatToChange, boatName, boatLength, boatLengthUnit, boatType);
+    public void changeBoat(Member memberToChangeBoatOn, Boat boatToChange, String boatName, int boatLength, String boatLengthUnit, String boatType) {
+        memberToChangeBoatOn.changeBoat(boatToChange, boatName, boatLength, boatLengthUnit, boatType);
     }
 }
 

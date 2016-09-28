@@ -1,6 +1,7 @@
 package view;
 
 import controller.ErrorHandling;
+import model.Boat;
 import model.Member;
 
 import java.util.ArrayList;
@@ -99,14 +100,19 @@ public class Console {
 
     //Delete member
 
-    public int presentDeleteMember() {
+    public Member presentDeleteMember(ArrayList<Member> members) {
+        presentMembers(members);
         System.out.println("Choose a user to delete by entering the corresponding number:");
-        String nextLine = in.nextLine();
+        String memberLine = in.nextLine();
 
-        //fix error handling
-        int nextInt= Integer.parseInt(nextLine);
+        if (isInteger(memberLine, members.size())){
+            return members.get(input - 1);
+        }else {
+            System.out.println("Please provide a Integer between 1 and " + members.size() + ".");
+            presentChangeMember(members);
+        }
 
-        return nextInt;
+        return null;
     }
 
     //Change member
@@ -126,18 +132,36 @@ public class Console {
         return null;
     }
 
-    public int presentViewMember() {
+    public Member presentViewMember(ArrayList<Member> members) {
+        presentMembers(members);
         System.out.println("Choose a member to view by entering the corresponding number:");
-        Scanner in = new Scanner(System.in);
-        return in.nextInt();
+        String memberLine = in.nextLine();
+
+        if (isInteger(memberLine, members.size())){
+            return members.get(input - 1);
+        }else {
+            System.out.println("Please provide a Integer between 1 and " + members.size() + ".");
+            presentChangeMember(members);
+        }
+
+        return null;
     }
 
     //Register boat
 
-    public int presentRegisterBoat() {
+    public Member presentRegisterBoat(ArrayList<Member> members) {
+        presentMembers(members);
         System.out.println("Choose a member to register boat for by entering the corresponding number:");
-        Scanner in = new Scanner(System.in);
-        return in.nextInt();
+        String memberLine = in.nextLine();
+
+        if (isInteger(memberLine, members.size())){
+            return members.get(input - 1);
+        }else {
+            System.out.println("Please provide a Integer between 1 and " + members.size() + ".");
+            presentChangeMember(members);
+        }
+
+        return null;
     }
 
     //Register and change boat
@@ -178,31 +202,69 @@ public class Console {
 
     //Delete boat
 
-    public int presentDeleteBoat() {
-        System.out.println("Choose boat to delete by entering the corresponding number:");
-        Scanner in = new Scanner(System.in);
-        return in.nextInt();
+    public Member presentMemberToDeleteBoatFrom(ArrayList<Member> members) {
+        presentMembers(members);
+        System.out.println("Choose a member to delete boat from by entering the corresponding number:");
+        String memberLine = in.nextLine();
+
+        if (isInteger(memberLine, members.size())){
+            return members.get(input - 1);
+        }else {
+            System.out.println("Please provide a Integer between 1 and " + members.size() + ".");
+            presentMemberToDeleteBoatFrom(members);
+        }
+
+        return null;
     }
 
-    public int presentMemberToDeleteBoatFrom() {
-        System.out.println("Choose a member to delete boat from by entering the corresponding number:");
-        Scanner in = new Scanner(System.in);
-        return in.nextInt();
+    public Boat presentDeleteBoat(Member member) {
+        presentMemberVerbose(member);
+        System.out.println("Choose boat to delete by entering the corresponding number:");
+        String memberLine = in.nextLine();
+
+        if (isInteger(memberLine, member.getM_boats().size())){
+            return member.getM_boats().get(input - 1);
+        }else {
+            System.out.println("Please provide a Integer between 1 and " + member.getM_boats().size() + ".");
+            presentDeleteBoat(member);
+        }
+
+        return null;
     }
 
     //Change boat
 
-    public int presentChangeBoat() {
-        System.out.println("Choose boat to change by entering the corresponding number:");
-        Scanner in = new Scanner(System.in);
-        return in.nextInt();
+    public Member presentMemberToChangeBoatOn(ArrayList<Member> members) {
+        presentMembers(members);
+        System.out.println("Choose a member to change boat on by entering the corresponding number:");
+        String memberLine = in.nextLine();
+
+        if (isInteger(memberLine, members.size())){
+            return members.get(input - 1);
+        }else {
+            System.out.println("Please provide a Integer between 1 and " + members.size() + ".");
+            presentMemberToDeleteBoatFrom(members);
+        }
+
+        return null;
     }
 
-    public int presentMemberToChangeBoatOn() {
-        System.out.println("Choose a member to change boat on by entering the corresponding number:");
-        Scanner in = new Scanner(System.in);
-        return in.nextInt();
+    public Boat presentChangeBoat(Member member) {
+        presentMemberVerbose(member);
+        System.out.println("Choose boat to change by entering the corresponding number:");
+        String memberLine = in.nextLine();
+
+        if (isInteger(memberLine, member.getM_boats().size())){
+            return member.getM_boats().get(input - 1);
+        }else {
+            System.out.println("Please provide a Integer between 1 and " + member.getM_boats().size() + ".");
+            presentDeleteBoat(member);
+        }
+
+        return null;
     }
+
+
 
     private boolean isInteger(String s, int max) {
         try {
