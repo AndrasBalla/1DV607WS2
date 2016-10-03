@@ -68,7 +68,7 @@ public class Console {
             for (int j = 0; j < members.get(i).getM_boats().size(); j++) {
                 System.out.println("     " + (j + 1) + ". Name:" + members.get(i).getM_boats().get(j).getM_boatName());
                 System.out.println("        Type:" + members.get(i).getM_boats().get(j).getM_boatType());
-                System.out.println("        Length:" + members.get(i).getM_boats().get(j).getM_length() + " " + members.get(i).getM_boats().get(j).getM_lengthUnit());
+                System.out.println("        Length:" + members.get(i).getM_boats().get(j).getM_length() + " m");
             }
         }
         System.out.println("---------------------------------------------");
@@ -80,13 +80,18 @@ public class Console {
         for (int j = 0; j < member.getM_boats().size(); j++) {
             System.out.println("     " + (j + 1) + ". Name:" + member.getM_boats().get(j).getM_boatName());
             System.out.println("        Type:" + member.getM_boats().get(j).getM_boatType());
-            System.out.println("        Length:" + member.getM_boats().get(j).getM_length() + " " + member.getM_boats().get(j).getM_lengthUnit());
+            System.out.println("        Length:" + member.getM_boats().get(j).getM_length() + " m");
         }
         System.out.println("---------------------------------------------");
     }
 
     //Delete member
 
+    /**
+     * Present the menu for Deleting member. Accepts input from the user.
+     * @param members An arraylist containing Member objects.
+     * @return A member found at the provided position.
+     */
     public Member presentDeleteMember(ArrayList<Member> members) {
         presentMembers(members);
         System.out.println("Choose a user to delete by entering the corresponding number:");
@@ -157,13 +162,7 @@ public class Console {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter boat name:");
         String name = in.nextLine();
-        if (check.checkName(name)){
-            return name;
-        }else {
-            System.out.println("Please provide a name.");
-            presentAddBoatName();
-        }
-        return null;
+        return name;
     }
 
     public String presentAddBoatType() {
@@ -173,18 +172,18 @@ public class Console {
         return type;
     }
 
-    public int presentAddBoatLength() {
+    public String presentAddBoatLength() {
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter Boat length:");
-        int length = in.nextInt();
-        return length;
-    }
+        System.out.println("Enter Boat length in meters:");
+        String length = in.nextLine();
+        if (isInteger(length, 100)){
+            return length;
+        }else {
+            System.out.println("Please provide a Integer between 1 and 100.");
+            presentAddBoatLength();
+        }
 
-    public String presentAddBoatLengthUnit() {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Choose unit to enter length in");
-        String unit = in.nextLine();
-        return unit;
+        return null;
     }
 
     //Delete boat

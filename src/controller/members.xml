@@ -2,7 +2,14 @@
 <data count="8">
     <member mMemberID="0">
         <m_name>Britta Nilsson</m_name>
-        <boats/>
+        <boats>
+            <boat>
+                <m_boatName>The queen mary</m_boatName>
+                <m_boatType>SailBoat</m_boatType>
+                <m_length>1009</m_length>
+                <m_lengthUnit>m</m_lengthUnit>
+            </boat>
+        </boats>
         <m_personalNumber>830318-3571</m_personalNumber>
     </member>
     <member mMemberID="1">
@@ -21,10 +28,5 @@
             </boat>
         </boats>
         <m_personalNumber>910612-1511</m_personalNumber>
-    </member>
-    <member mMemberID="7">
-        <m_name></m_name>
-        <boats/>
-        <m_personalNumber></m_personalNumber>
     </member>
 </data>
