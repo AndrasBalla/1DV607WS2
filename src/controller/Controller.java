@@ -68,9 +68,8 @@ public class Controller {
                 while (check.checkName(boatType)){
                     boatType = a_view.presentAddName("Please provide a boat type.");
                 }
-                int boatLength = a_view.presentAddBoatLength();
-                String boatLengthUnit = a_view.presentAddBoatLengthUnit();
-                a_data.addBoat(memberToAddBoatTo, boatName, boatLength, boatLengthUnit, boatType);
+                String boatLength = a_view.presentAddBoatLength();
+                a_data.addBoat(memberToAddBoatTo, boatName, boatLength, boatType);
                 database.writeXml(a_data);
             }
             if (menuNumber == 8) {
@@ -84,9 +83,8 @@ public class Controller {
                 Boat boatToChange = a_view.presentChangeBoat(memberToChangeBoatOn);
                 String boatName = a_view.presentAddBoatName();
                 String boatType = a_view.presentAddBoatType();
-                int boatLength = a_view.presentAddBoatLength();
-                String boatLengthUnit = a_view.presentAddBoatLengthUnit();
-                a_data.changeBoat(memberToChangeBoatOn, boatToChange, boatName, boatLength, boatLengthUnit, boatType);
+                String boatLength = a_view.presentAddBoatLength();
+                a_data.changeBoat(memberToChangeBoatOn, boatToChange, boatName, boatLength, boatType);
                 database.writeXml(a_data);
             }
         }

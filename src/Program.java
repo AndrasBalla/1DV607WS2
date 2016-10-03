@@ -9,7 +9,6 @@ public class Program {
         Console v = new Console();
         Data d = new Data();
 
-
         m.Show(v, d);
 
     }

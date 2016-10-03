@@ -69,15 +69,14 @@ public class Member {
         m_boats.remove(boatToDelete);
     }
 
-    public void changeBoat(Boat boatToChange, String boatName, int boatLength, String boatLengthUnit, String boatType) {
+    public void changeBoat(Boat boatToChange, String boatName, String boatLength, String boatType) {
         boatToChange.setM_boatName(boatName);
         boatToChange.setM_boatType(boatType);
         boatToChange.setM_length(boatLength);
-        boatToChange.setM_lengthUnit(boatLengthUnit);
     }
 
-    public void addBoat(String boatName, String boatType, int boatLength, String boatLengthUnit) {
-        Boat boat = new Boat(boatName, boatType, boatLength, boatLengthUnit);
+    public void addBoat(String boatName, String boatType, String boatLength) {
+        Boat boat = new Boat(boatName, boatType, boatLength);
         this.addBoat(boat);
     }
 }

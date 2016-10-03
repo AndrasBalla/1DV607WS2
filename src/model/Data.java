@@ -43,16 +43,16 @@ public class Data {
 
     public void setCount(int count) {this.count = count;}
 
-    public void addBoat(Member memberToAddBoatTo, String boatName, int boatLength, String boatLengthUnit, String boatType) {
-        memberToAddBoatTo.addBoat(boatName, boatType, boatLength, boatLengthUnit);
+    public void addBoat(Member memberToAddBoatTo, String boatName, String boatLength, String boatType) {
+        memberToAddBoatTo.addBoat(boatName, boatType, boatLength);
     }
 
     public void deleteBoat(Member memberToDeleteBoatFrom, Boat boatToDelete) {
         memberToDeleteBoatFrom.deleteBoat(boatToDelete);
     }
 
-    public void changeBoat(Member memberToChangeBoatOn, Boat boatToChange, String boatName, int boatLength, String boatLengthUnit, String boatType) {
-        memberToChangeBoatOn.changeBoat(boatToChange, boatName, boatLength, boatLengthUnit, boatType);
+    public void changeBoat(Member memberToChangeBoatOn, Boat boatToChange, String boatName, String boatLength, String boatType) {
+        memberToChangeBoatOn.changeBoat(boatToChange, boatName, boatLength, boatType);
     }
 }
 
