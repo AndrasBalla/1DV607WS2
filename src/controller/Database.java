@@ -1,6 +1,7 @@
 package controller;
 
-import model.Data;
+import model.Registry;
+
 import java.io.File;
 
 import javax.xml.bind.JAXBContext;
@@ -13,13 +14,13 @@ public class Database {
 
     /**
      * Method to load in the content of the database file.
-     * @return Object Data.
+     * @return Object Registry.
      */
-    public Data readXml(){
+    public Registry readXml(){
         try{
-            JAXBContext context = JAXBContext.newInstance(Data.class);
+            JAXBContext context = JAXBContext.newInstance(Registry.class);
             Unmarshaller un = context.createUnmarshaller();
-            Data temp = (Data) un.unmarshal(new File(FILE_NAME));
+            Registry temp = (Registry) un.unmarshal(new File(FILE_NAME));
             return temp;
         } catch(JAXBException e) {
             e.printStackTrace();
@@ -28,20 +29,20 @@ public class Database {
     }
 
     /**
-     * Takes the object data and updates the file accordingly.
-     * @param data
+     * Takes the object Registry and updates the file accordingly.
+     * @param Registry
      */
-    public void writeXml(Data data){
+    public void writeXml(Registry Registry){
         try {
-            JAXBContext context = JAXBContext.newInstance(Data.class);
+            JAXBContext context = JAXBContext.newInstance(Registry.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
             // Write to System.out for debugging
-            //m.marshal(data, System.out);
+            //m.marshal(Registry, System.out);
 
             // Write to File
-            m.marshal(data, new File(FILE_NAME));
+            m.marshal(Registry, new File(FILE_NAME));
         } catch (JAXBException e) {
             e.printStackTrace();
         }

@@ -1,6 +1,5 @@
 package view;
 
-import controller.ErrorHandling;
 import model.Boat;
 import model.Member;
 
@@ -37,16 +36,14 @@ public class Console {
 
     //Add member functions
 
-    public String presentAddName(String errorMsg) {
+    public String presentAddName() {
         //Scanner in = new Scanner(System.in);
-        System.out.println(errorMsg);
         System.out.println("Enter member name:");
         return in.nextLine();
     }
 
-    public String presentAddPersonalNumber(String errorMsg) {
+    public String presentAddPersonalNumber() {
         //Scanner in = new Scanner(System.in);
-        System.out.println(errorMsg);
         System.out.println("Enter members personal number/n use the following format YYMMDD-XXXX");
         return in.nextLine();
     }

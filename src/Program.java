@@ -1,5 +1,5 @@
 import controller.Controller;
-import model.Data;
+import model.Registry;
 import view.Console;
 
 public class Program {
@@ -7,7 +7,7 @@ public class Program {
 
         Controller m = new Controller();
         Console v = new Console();
-        Data d = new Data();
+        Registry d = new Registry();
 
         m.Show(v, d);
 
