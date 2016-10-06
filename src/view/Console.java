@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Console {
 
-    private ErrorHandling check = new ErrorHandling();
+
     private Scanner in = new Scanner(System.in);
     private int input;
 
@@ -168,7 +168,28 @@ public class Console {
     public String presentAddBoatType() {
         Scanner in = new Scanner(System.in);
         System.out.println("Choose boat type");
+        System.out.println("1. Sailboat");
+        System.out.println("2. Motorsailer");
+        System.out.println("3. Kayak/Canoe");
+        System.out.println("4. Other");
         String type = in.nextLine();
+
+        if (isInteger(type, 4)){
+            int typeInt = Integer.parseInt(type);
+            switch (typeInt) {
+                case 1:
+                    return "Sailboat";
+                case 2:
+                    return "Motorsailer";
+                case 3:
+                    return "Kayak/Canoe";
+                case 4:
+                    return "Other";
+            }
+        } else {
+            System.out.println("Please provide a Integer between 1 and 4.");
+            presentAddBoatType();
+        }
         return type;
     }
 
