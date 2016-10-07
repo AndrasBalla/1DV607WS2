@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Registry count="8">
+<Registry count="10">
     <member mMemberID="0">
         <m_name>Britta Nilsson</m_name>
         <boats>
@@ -14,22 +14,27 @@
                 <m_length>5</m_length>
             </boat>
         </boats>
-        <m_personalNumber>830318-3571</m_personalNumber>
+        <m_personalNumber>950813-8428</m_personalNumber>
     </member>
     <member mMemberID="1">
         <m_name>Nisse Malm</m_name>
         <boats/>
-        <m_personalNumber>830318-3571</m_personalNumber>
+        <m_personalNumber>950813-8428</m_personalNumber>
     </member>
-    <member mMemberID="2">
-        <m_name>Lasse Nilssonn</m_name>
+    <member mMemberID="8">
+        <m_name>Fredrik Olsson</m_name>
+        <boats/>
+        <m_personalNumber>950813-8428</m_personalNumber>
+    </member>
+    <member mMemberID="9">
+        <m_name>Lasse</m_name>
         <boats>
             <boat>
-                <m_boatName>Fredriko!</m_boatName>
-                <m_boatType>sdfsf</m_boatType>
-                <m_length>3</m_length>
+                <m_boatName>hejhopp</m_boatName>
+                <m_boatType>Other</m_boatType>
+                <m_length>5</m_length>
             </boat>
         </boats>
-        <m_personalNumber>910612-1511</m_personalNumber>
+        <m_personalNumber>950813-8428</m_personalNumber>
     </member>
 </Registry>

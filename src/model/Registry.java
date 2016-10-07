@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "data")
+@XmlRootElement(name = "Registry")
 public class Registry {
     private ArrayList<Member> members = new ArrayList<Member>();
     private int count = 0;
