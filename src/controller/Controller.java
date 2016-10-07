@@ -15,6 +15,7 @@ public class Controller {
             //Load in Array from the xml file.
             a_registry = Database.readXml();
 
+            // add member
             if (menuNumber == 1) {
                 String name = a_view.presentAddName();
                 while (check.checkName(name)){
@@ -27,11 +28,15 @@ public class Controller {
                 a_registry.addMember(name, personalNumber);
                 Database.writeXml(a_registry);
             }
+
+            //Delete member
             if (menuNumber == 2) {
                 Member memberToDelete = a_view.presentDeleteMember(a_registry.getMembers());
                 a_registry.deleteMember(memberToDelete);
                 Database.writeXml(a_registry);
             }
+
+            //Change member
             if (menuNumber == 3) {
                 Member memberToChange = a_view.presentChangeMember(a_registry.getMembers());
                 String name = a_view.presentAddName();
@@ -45,19 +50,24 @@ public class Controller {
                 a_registry.changeMember(memberToChange, name, personalNumber);
                 Database.writeXml(a_registry);
             }
+
+            //View members compact
             if (menuNumber == 4) {
                 a_view.presentMembers(a_registry.getMembers());
             }
 
+            //View members verbose
             if (menuNumber == 5) {
                 a_view.presentMembersVerbose(a_registry.getMembers());
             }
 
+            //View member
             if (menuNumber == 6) {
                 Member memberToView = a_view.presentViewMember(a_registry.getMembers());
                 a_view.presentMemberVerbose(memberToView);
             }
 
+            //Register Boat
             if (menuNumber == 7) {
                 Member memberToAddBoatTo = a_view.presentRegisterBoat(a_registry.getMembers());
                 String boatName = a_view.presentAddBoatName();
@@ -69,12 +79,16 @@ public class Controller {
                 a_registry.addBoat(memberToAddBoatTo, boatName, boatLength, boatType);
                 Database.writeXml(a_registry);
             }
+
+            //Delete boat
             if (menuNumber == 8) {
                 Member memberToDeleteBoatFrom = a_view.presentMemberToDeleteBoatFrom(a_registry.getMembers());
                 Boat boatToDelete = a_view.presentDeleteBoat(memberToDeleteBoatFrom);
                 a_registry.deleteBoat(memberToDeleteBoatFrom, boatToDelete);
                 Database.writeXml(a_registry);
             }
+
+            //Change boat
             if (menuNumber == 9) {
                 Member memberToChangeBoatOn = a_view.presentMemberToChangeBoatOn(a_registry.getMembers());
                 Boat boatToChange = a_view.presentChangeBoat(memberToChangeBoatOn);
