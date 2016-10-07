@@ -23,7 +23,7 @@ public class Controller {
                 String personalNumber = a_view.presentAddPersonalNumber();
                 while (!(check.checkPnr(personalNumber))){
                     personalNumber = a_view.presentAddPersonalNumber();
-                } .
+                }
                 a_registry.addMember(name, personalNumber);
                 Database.writeXml(a_registry);
             }
