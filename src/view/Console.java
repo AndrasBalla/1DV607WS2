@@ -98,7 +98,7 @@ public class Console {
             return members.get(input - 1);
         }else {
             System.out.println("Please provide a Integer between 1 and " + members.size() + ".");
-            presentChangeMember(members);
+            presentDeleteMember(members);
         }
 
         return null;
@@ -115,10 +115,10 @@ public class Console {
             return members.get(input - 1);
         }else {
             System.out.println("Please provide a Integer between 1 and " + members.size() + ".");
-            presentChangeMember(members);
+            return presentChangeMember(members);
         }
 
-        return null;
+        //return null;
     }
 
     public Member presentViewMember(ArrayList<Member> members) {
@@ -130,10 +130,10 @@ public class Console {
             return members.get(input - 1);
         }else {
             System.out.println("Please provide a Integer between 1 and " + members.size() + ".");
-            presentChangeMember(members);
+            return presentViewMember(members);
         }
 
-        return null;
+        //return null;
     }
 
     //Register boat
@@ -147,7 +147,7 @@ public class Console {
             return members.get(input - 1);
         }else {
             System.out.println("Please provide a Integer between 1 and " + members.size() + ".");
-            presentChangeMember(members);
+            presentRegisterBoat(members);
         }
 
         return null;
@@ -194,7 +194,7 @@ public class Console {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter Boat length in meters:");
         String length = in.nextLine();
-        if (isInteger(length, 100)){
+        if (isInteger(length, 101)){
             return length;
         }else {
             System.out.println("Please provide a Integer between 1 and 100.");
