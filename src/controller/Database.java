@@ -16,7 +16,7 @@ public class Database {
      * Method to load in the content of the database file.
      * @return Object Registry.
      */
-    public Registry readXml(){
+    public Registry readFromDB(){
         try{
             JAXBContext context = JAXBContext.newInstance(Registry.class);
             Unmarshaller un = context.createUnmarshaller();
@@ -32,7 +32,7 @@ public class Database {
      * Takes the object Registry and updates the file accordingly.
      * @param Registry
      */
-    public void writeXml(Registry Registry){
+    public void writeToDB(Registry Registry){
         try {
             JAXBContext context = JAXBContext.newInstance(Registry.class);
             Marshaller m = context.createMarshaller();

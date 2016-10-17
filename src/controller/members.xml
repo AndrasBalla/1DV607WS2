@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Registry count="12">
+<Registry count="13">
     <member mMemberID="0">
         <m_name>Britta Nilsson</m_name>
         <boats>
@@ -60,16 +60,16 @@
                 <m_length>5</m_length>
             </boat>
             <boat>
-                <m_boatName>xxx</m_boatName>
+                <m_boatName>wasd</m_boatName>
                 <m_boatType>Sailboat</m_boatType>
-                <m_length>5</m_length>
-            </boat>
-            <boat>
-                <m_boatName>yyy</m_boatName>
-                <m_boatType>Sailboat</m_boatType>
-                <m_length>5</m_length>
+                <m_length>20</m_length>
             </boat>
         </boats>
         <m_personalNumber>950813-8428</m_personalNumber>
+    </member>
+    <member mMemberID="12">
+        <m_name>Freddy blabla</m_name>
+        <boats/>
+        <m_personalNumber>830318-3571</m_personalNumber>
     </member>
 </Registry>

@@ -14,7 +14,7 @@ public class Controller {
             Database Database = new Database();
             ErrorHandling check = new ErrorHandling();
             //Load in Array from the xml file.
-            a_registry = Database.readXml();
+            a_registry = Database.readFromDB();
 
             // add member
             if (menuNumber == 1) {
@@ -27,14 +27,14 @@ public class Controller {
                     personalNumber = a_view.presentAddPersonalNumber();
                 }
                 a_registry.addMember(name, personalNumber);
-                Database.writeXml(a_registry);
+                Database.writeToDB(a_registry);
             }
 
             //Delete member
             if (menuNumber == 2) {
                 Member memberToDelete = a_view.presentDeleteMember(a_registry.getMembers());
                 a_registry.deleteMember(memberToDelete);
-                Database.writeXml(a_registry);
+                Database.writeToDB(a_registry);
             }
 
             //Change member
@@ -49,7 +49,7 @@ public class Controller {
                     personalNumber = a_view.presentAddPersonalNumber();
                 }
                 a_registry.changeMember(memberToChange, name, personalNumber);
-                Database.writeXml(a_registry);
+                Database.writeToDB(a_registry);
             }
 
             //View members compact
@@ -78,7 +78,7 @@ public class Controller {
                 BoatType boatType = a_view.presentAddBoatType();
                 String boatLength = a_view.presentAddBoatLength();
                 a_registry.addBoat(memberToAddBoatTo, boatName, boatLength, boatType);
-                Database.writeXml(a_registry);
+                Database.writeToDB(a_registry);
             }
 
             //Delete boat
@@ -86,7 +86,7 @@ public class Controller {
                 Member memberToDeleteBoatFrom = a_view.presentMemberToDeleteBoatFrom(a_registry.getMembers());
                 Boat boatToDelete = a_view.presentDeleteBoat(memberToDeleteBoatFrom);
                 a_registry.deleteBoat(memberToDeleteBoatFrom, boatToDelete);
-                Database.writeXml(a_registry);
+                Database.writeToDB(a_registry);
             }
 
             //Change boat
@@ -97,7 +97,7 @@ public class Controller {
                 BoatType boatType = a_view.presentAddBoatType();
                 String boatLength = a_view.presentAddBoatLength();
                 a_registry.changeBoat(memberToChangeBoatOn, boatToChange, boatName, boatLength, boatType);
-                Database.writeXml(a_registry);
+                Database.writeToDB(a_registry);
             }
         }
     }

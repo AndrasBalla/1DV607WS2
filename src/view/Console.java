@@ -229,7 +229,6 @@ public class Console {
             System.out.println("Please provide a Integer between 1 and " + member.getM_boats().size() + ".");
             presentDeleteBoat(member);
         }
-
         return null;
     }
 
@@ -246,7 +245,6 @@ public class Console {
             System.out.println("Please provide a Integer between 1 and " + members.size() + ".");
             presentMemberToDeleteBoatFrom(members);
         }
-
         return null;
     }
 
@@ -259,13 +257,10 @@ public class Console {
             return member.getM_boats().get(input - 1);
         }else {
             System.out.println("Please provide a Integer between 1 and " + member.getM_boats().size() + ".");
-            presentDeleteBoat(member);
+            presentChangeBoat(member);
         }
-
         return null;
     }
-
-
 
     private boolean isInteger(String s, int max) {
         try {
