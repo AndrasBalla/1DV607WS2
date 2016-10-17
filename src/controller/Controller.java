@@ -1,6 +1,7 @@
 package controller;
 
 import model.Boat;
+import model.BoatType;
 import model.Registry;
 import model.Member;
 import view.Console;
@@ -74,7 +75,7 @@ public class Controller {
                 while (check.checkName(boatName)){
                     boatName = a_view.presentAddName();
                 }
-                String boatType = a_view.presentAddBoatType();
+                BoatType boatType = a_view.presentAddBoatType();
                 String boatLength = a_view.presentAddBoatLength();
                 a_registry.addBoat(memberToAddBoatTo, boatName, boatLength, boatType);
                 Database.writeXml(a_registry);
@@ -93,7 +94,7 @@ public class Controller {
                 Member memberToChangeBoatOn = a_view.presentMemberToChangeBoatOn(a_registry.getMembers());
                 Boat boatToChange = a_view.presentChangeBoat(memberToChangeBoatOn);
                 String boatName = a_view.presentAddBoatName();
-                String boatType = a_view.presentAddBoatType();
+                BoatType boatType = a_view.presentAddBoatType();
                 String boatLength = a_view.presentAddBoatLength();
                 a_registry.changeBoat(memberToChangeBoatOn, boatToChange, boatName, boatLength, boatType);
                 Database.writeXml(a_registry);

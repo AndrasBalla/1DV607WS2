@@ -43,7 +43,7 @@ public class Registry {
 
     public void setCount(int count) {this.count = count;}
 
-    public void addBoat(Member memberToAddBoatTo, String boatName, String boatLength, String boatType) {
+    public void addBoat(Member memberToAddBoatTo, String boatName, String boatLength, BoatType boatType) {
         memberToAddBoatTo.addBoat(boatName, boatType, boatLength);
     }
 
@@ -51,7 +51,7 @@ public class Registry {
         memberToDeleteBoatFrom.deleteBoat(boatToDelete);
     }
 
-    public void changeBoat(Member memberToChangeBoatOn, Boat boatToChange, String boatName, String boatLength, String boatType) {
+    public void changeBoat(Member memberToChangeBoatOn, Boat boatToChange, String boatName, String boatLength, BoatType boatType) {
         memberToChangeBoatOn.changeBoat(boatToChange, boatName, boatLength, boatType);
     }
 }

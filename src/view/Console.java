@@ -1,6 +1,7 @@
 package view;
 
 import model.Boat;
+import model.BoatType;
 import model.Member;
 
 import java.util.ArrayList;
@@ -162,32 +163,28 @@ public class Console {
         return name;
     }
 
-    public String presentAddBoatType() {
+    public BoatType presentAddBoatType() {
+
+        BoatType[] boatType = BoatType.values();
+        int typeInt;
+
         Scanner in = new Scanner(System.in);
-        System.out.println("Choose boat type");
-        System.out.println("1. Sailboat");
-        System.out.println("2. Motorsailer");
-        System.out.println("3. Kayak/Canoe");
-        System.out.println("4. Other");
+
+        for (int i=0; i<boatType.length; i+=1){
+            System.out.println((i + 1) + ". "+ boatType[i]);
+        }
+
         String type = in.nextLine();
 
         if (isInteger(type, 4)){
-            int typeInt = Integer.parseInt(type);
-            switch (typeInt) {
-                case 1:
-                    return "Sailboat";
-                case 2:
-                    return "Motorsailer";
-                case 3:
-                    return "Kayak/Canoe";
-                case 4:
-                    return "Other";
+            typeInt = Integer.parseInt(type);
+                return boatType[typeInt - 1];
+
+            } else {
+                System.out.println("Please provide a Integer between 1 and " + boatType.length + ".");
+                presentAddBoatType();
             }
-        } else {
-            System.out.println("Please provide a Integer between 1 and 4.");
-            presentAddBoatType();
-        }
-        return type;
+        return null;
     }
 
     public String presentAddBoatLength() {
